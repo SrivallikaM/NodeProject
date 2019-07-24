@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>My Profile - Go Online Auctions</title>
+
+		<meta name="description" content="overview &amp; stats" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+		<!-- page specific plugin styles -->
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="assets/css/fonts.googleapis.com.css" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
+		<![endif]-->
+		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+
+		<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+		<!-- inline styles related to this page -->
+
+		<!-- ace settings handler -->
+		<script src="assets/js/ace-extra.min.js"></script>
+
+		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+		<!--[if lte IE 8]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<body class="no-skin">
+		<div id="navbar" class="navbar navbar-default          ace-save-state">
+			<div class="navbar-container ace-save-state" id="navbar-container">
+				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+					<span class="sr-only">Toggle sidebar</span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+				</button>
+
+				<div class="navbar-header pull-left">
+					<a href="index.html" class="navbar-brand">
+						<small>
+							<i class="fa fa-leaf"></i>
+							Go Online
+						</small>
+					</a>
+				</div>
+
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav">
+
+						<li class="light-blue dropdown-modal">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								
+								<span class="user-info">
+									<small>Welcome</small>
+									
+								</span>
+
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close user-logout">
+
+								<li>
+									<a href="https://localhost:8000/api/profile">
+										<i class="ace-icon fa fa-user"></i>
+										My Profile
+									</a>
+								</li>
+
+								<li class="divider"></li>
+								
+								<li>
+									<a id="logout" href="#">
+										<i class="ace-icon fa fa-power-off"></i>
+										Logout
+									</a>
+								</li>
+
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div><!-- /.navbar-container -->
+		</div>
+
+		<div class="main-container ace-save-state" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.loadState('main-container')}catch(e){}
+			</script>
+
+			<div id="sidebar" class="sidebar                  responsive                    ace-save-state">
+				<script type="text/javascript">
+					try{ace.settings.loadState('sidebar')}catch(e){}
+				</script>
+
+
+				<ul class="nav nav-list">
+					<li>
+						<a href="https://localhost:8000/api/dashboard">
+							<i class="menu-icon fa fa-tachometer"></i>
+							<span class="menu-text"> Dashboard </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+					
+					<li>
+						<a href="https://localhost:8000/api/search">
+							<i class="menu-icon fa  fa-laptop"></i>
+							<span class="menu-text"> Search Items </span>
+						</a>
+					</li>
+					
+					<li>
+						<a href="https://localhost:8000/api/postitems">
+							<i class="menu-icon fa fa-check-square-o"></i>
+							<span class="menu-text"> Post Items</span>
+						</a>
+					</li>
+					
+					<li>
+						<a href="https://localhost:8000/api/myitembids">
+							<i class="menu-icon fa  fa-exchange"></i>
+							<span class="menu-text"> My Item Bids </span>
+						</a>
+					</li>
+					
+					<li>
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-list"></i>
+							<span class="menu-text"> My Activity </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="https://localhost:8000/api/myitems">
+									<i class="menu-icon fa fa-caret-right"></i>
+									My Items
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="https://localhost:8000/api/mybids">
+									<i class="menu-icon fa fa-caret-right"></i>
+									My Bids
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							
+							<li class="">
+								<a href="https://localhost:8000/api/mypo">
+									<i class="menu-icon fa fa-caret-right"></i>
+									My Purchases
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					
+				</ul><!-- /.nav-list -->
+
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+				</div>
+			</div>
+
+			<div class="main-content">
+				<div class="main-content-inner">
+					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+						<ul class="breadcrumb">
+							<li>
+								<i class="ace-icon fa fa-home home-icon"></i>
+								<a href="#">Home</a>
+							</li>
+							<li class="active">My Profile</li>
+						</ul><!-- /.breadcrumb -->
+					</div>
+
+					<div class="page-content">
+
+						<div class="page-header">
+							<h1>
+								My Profile
+							</h1>
+						</div><!-- /.page-header -->
+
+						<div class="row">
+							<div class="col-xs-12">
+								<!-- PAGE CONTENT BEGINS -->
+								<div class="row">
+									<div class="col-sm-12">
+									
+									<div class="update-profile">
+									<form class="form-horizontal" role="form">
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-input-readonly"> User Id </label>
+
+										<div class="col-sm-9">
+											<input readonly="" type="text" id="userid" class="col-xs-10 col-sm-5" id="form-input-readonly"/>
+
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-input-readonly"> Email Id </label>
+
+										<div class="col-sm-9">
+											<input readonly="" type="text" id="email" class="col-xs-10 col-sm-5" id="form-input-readonly"/>
+
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> First Name </label>
+
+										<div class="col-sm-9">
+											<input type="text" id="firstname" placeholder="First Name" class="col-xs-10 col-sm-5" />
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Last Name </label>
+
+										<div class="col-sm-9">
+											<input type="text" id="lastname" placeholder="Last Name" class="col-xs-10 col-sm-5" />
+										</div>
+									</div>
+									
+									
+									<div class="clearfix form-actions">
+										<div class="col-md-offset-3 col-md-9">
+											<button id="submit" class="btn btn-info" type="button">
+												<i class="ace-icon fa fa-check bigger-110"></i>
+												Submit
+											</button>
+
+											&nbsp; &nbsp; &nbsp;
+											<button class="btn" type="reset">
+												<i class="ace-icon fa fa-undo bigger-110"></i>
+												Reset
+											</button>
+										</div>
+									</div>
+									</div>
+									
+										
+									</div><!-- /.col -->
+								</div><!-- /.row -->
+
+								
+								
+								<div class="profile-info-row">
+											<div class="profile-info-name"> Last Login: </div>
+
+											<div class="profile-info-value">
+												<span class="editable" id="lastlogin"></span>
+											</div>
+									</div>
+									
+									<div class="profile-info-row">
+											<div class="profile-info-name"> Location: </div>
+
+											<div class="profile-info-value">
+												<span class="editable" id="location"></span>
+											</div>
+									</div>
+
+
+								
+					</div><!-- /.page-content -->
+				</div>
+			</div><!-- /.main-content -->
+
+			<div class="footer">
+				<div class="footer-inner">
+					<div class="footer-content">
+						<span class="bigger-120">
+							<span class="blue bolder">Go Online</span>
+							Auction Application &copy; 2017
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+		<script src="assets/js/jquery-2.1.4.min.js"></script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script src="assets/js/jquery-1.11.3.min.js"></script>
+<![endif]-->
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
+		<script src="assets/js/bootstrap.min.js"></script>
+
+		<!-- page specific plugin scripts -->
+
+		<!--[if lte IE 8]>
+		  <script src="assets/js/excanvas.min.js"></script>
+		<![endif]-->
+		<script src="assets/js/jquery-ui.custom.min.js"></script>
+		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="assets/js/jquery.easypiechart.min.js"></script>
+		<script src="assets/js/jquery.sparkline.index.min.js"></script>
+		<script src="assets/js/jquery.flot.min.js"></script>
+		<script src="assets/js/jquery.flot.pie.min.js"></script>
+		<script src="assets/js/jquery.flot.resize.min.js"></script>
+
+		<!-- ace scripts -->
+		<script src="assets/js/ace-elements.min.js"></script>
+		<script src="assets/js/ace.min.js"></script>
+
+		<!-- inline scripts related to this page -->
+		
+		
+		<script>
+			
+			//Location API
+			var $location;
+			$.get("https://ipinfo.io", function (response) {
+				$location = response.city + ", " + response.region;
+				console.log($location);
+				$("#location").text($location);
+			}, "jsonp");
+			//End of location API
+			
+			//Get Profile data
+			$.ajax({
+                    type: "GET",
+                    url: "https://localhost:8443/api/user/profileinfo",
+					crossDomain: true,
+					headers :{ 'Authorization':'SecureConnection' },
+                    success: function(data) {
+						console.log(data[0].email);
+						$("#userid").val(data[0].user_id);
+						$("#email").val(data[0].email);
+						$("#firstname").val(data[0].first_name);
+						$("#lastname").val(data[0].last_name);
+						var datetime = new Date(Date.parse(data[0].lastlogintime));
+						$("#lastlogin").text(datetime);
+					},
+					error: function(data) {
+						
+					}
+			});
+			//End of get profile data
+			
+			//Post profile data
+			$('.update-profile').on('click','#submit',function(e) {
+                e.preventDefault();
+
+                var body = {
+					email: $("#email").val(),
+					firstname: $("#firstname").val(),
+                    lastname: $("#lastname").val()
+                }
+					 
+			console.log("Body: "+JSON.stringify(body));
+
+                $.ajax({
+                    type: "POST",
+                    url: "https://localhost:8443/api/user/editprofile",
+					crossDomain: true,
+					headers :{ 'Authorization':'SecureConnection' },
+					contentType: "application/json; charset=utf-8",
+                    //dataType: "text json", Removed as response is not exactly in JSON, so error is triggered
+					data: JSON.stringify(body),
+                }).done(function ( data ) {
+						console.log("Success: "+JSON.stringify(data));
+						alert("Profile updated successfully!");
+						window.location.href = "https://localhost:8000/api/profile";
+				}).fail(function ( data ) {
+					   console.log("Error: "+JSON.stringify(data));
+				});
+					
+            });
+			// End of post profile data
+			
+			//Log Out
+			$('.user-logout').on('click','#logout',function(e) {
+                e.preventDefault();
+
+                $.ajax({
+					
+                    type: "POST",
+                    url: "https://localhost:8443/api/logout",
+					crossDomain: true,
+					headers :{ 'Authorization':'SecureConnection' },
+					contentType: "application/json; charset=utf-8",
+                }).done(function ( data ) {
+						console.log("Success: "+JSON.stringify(data));
+						window.location.href = "https://localhost:8000/api/login";
+				}).fail(function ( data ) {
+					   console.log("Error: "+JSON.stringify(data));
+				});
+					
+            });
+			//End of Logout
+			
+		</script>
+		
+		
+	</body>
+</html>
