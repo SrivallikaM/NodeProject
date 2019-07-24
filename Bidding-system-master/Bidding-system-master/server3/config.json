@@ -1,0 +1,8 @@
+
+{
+	"mysql" : {
+		"db" : "biddingSystem",
+		"user" : "root",
+		"password" : "tiger"
+	}
+}
