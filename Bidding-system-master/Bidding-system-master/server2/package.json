@@ -1,0 +1,25 @@
+{
+  "name": "bidding-system",
+  "version": "1.0.0",
+  "description": "WPL Final project Node JS ",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "compression": "^1.6.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "express-session": "^1.15.2",
+    "jsonwebtoken": "^7.3.0",
+    "md5": "^2.2.1",
+    "mysql": "^2.13.0",
+    "url": "^0.11.0",
+    "uuid": "^3.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "author": "Team GoOnline",
+  "license": "ISC"
+}
